@@ -8,8 +8,6 @@ public class AboutMe {
 
         try{
 
-
-
         Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
 
         System.out.println("Digite seu nome");
