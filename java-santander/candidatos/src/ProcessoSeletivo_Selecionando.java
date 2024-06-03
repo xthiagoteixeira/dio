@@ -1,5 +1,4 @@
 import java.util.Objects;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ProcessoSeletivo_Selecionando {
@@ -10,34 +9,7 @@ public class ProcessoSeletivo_Selecionando {
     public static void main(String[] args) {
         selecaoCandidatos();
         imprimirSelecionados();
-        for (String candidato: candidatos){
-            entrandoEmContato(candidato);
-        }
-    }
 
-    static void entrandoEmContato(string candidato) {
-        int tentativasRealizadas = 1;
-        boolean continuarTentando = true;
-        boolean atendeu=false;
-        do {
-            atendeu=atender();
-            continuarTentando = !atendeu;
-            if(continuarTentando)
-                tentativasRealizadas++;
-            else
-                System.out.println("CONTATO REALIZADO COM SUCESSO");
-
-        }while(continuarTentando && tentativasRealizadas<3);
-
-        if(atendeu)
-            System.out.println("CONSEGUIMOS CONTATO COM " + candidato + " NA " + tentativasRealizadas);
-        else
-            System.out.println("NAO CONSEGUIMOS CONTATO COM " + candidato + " NUMERO MAXIMO DE TENTATIVAS " + tentativasRealizadas);
-
-    }
-
-    static boolean atender(){
-        return new Random().nextInt(3)==1;
     }
 
     static void imprimirSelecionados(){
