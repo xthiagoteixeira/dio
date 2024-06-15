@@ -8,7 +8,7 @@ public class CatalogoLivros {
     private List<Livro> livroList;
 
     public CatalogoLivros() {
-        this.livroList = new ArrayList<>()
+        this.livroList = new ArrayList<>();
     }
     public void adicionarLivro(String titulo, String autor, int anoPublicacao) {
         livroList.add(new Livro(titulo, autor, anoPublicacao));
@@ -38,12 +38,33 @@ public class CatalogoLivros {
             }
         }
         return livrosPorIntervaloAnos;
-
     }
 
-    public void pesquisaPorTitulo(String titulo) {
 
+    public Livro pesquisarPorTitulo(String titulo) {
+        Livro livroPorTitulo = null;
+        if(!livroList.isEmpty()){
+            for (Livro livro : livroList) {
+                if (livro.getTitulo().equalsIgnoreCase(titulo)) {
+                    livroPorTitulo = livro;
+                    break;
+                }
+            }
+        }
+        return livroPorTitulo;
     }
 
+    public static void main(String[] args) {
+        CatalogoLivros catalogoLivros = new CatalogoLivros();
+        catalogoLivros.adicionarLivro("The Great Gatsby", "F. Scott Fitzgerald", 1925);
+        catalogoLivros.adicionarLivro("To Kill a Mockingbird", "Harper Lee", 1960);
+        catalogoLivros.adicionarLivro("1984", "George Orwell", 1949);
+
+
+        System.out.println(catalogoLivros.pesquisaPorAutor("George Orwell"));
+        System.out.println(catalogoLivros.pesquisarPorIntervaloAnos(1925, 1949));
+        System.out.println(catalogoLivros.pesquisarPorTitulo("The Great Gatsby"));
+
+    }
 
 }
