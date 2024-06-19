@@ -6,7 +6,7 @@ public class AgendaContatos {
 
     private Map<String, Integer> agendaContatoMap;
 
-    public AgendaContatos(Map<String, Integer> agendaContatoMap) {
+    public AgendaContatos() {
         this.agendaContatoMap = agendaContatoMap;
     }
 
