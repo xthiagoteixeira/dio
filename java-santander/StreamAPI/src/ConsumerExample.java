@@ -14,7 +14,6 @@ public class ConsumerExample {
             if(numero % 2 == 0) {
                 System.out.println(numero);
             }
-
         };
 
         // Usar o Consumer para imprimir numeros pares no Stream
