@@ -12,7 +12,7 @@ public class SuplierExample {
         // Usar o Supplier para fornecer uma lista de 5 saudações personalizada...
         List<String> listaSaudacoes = Stream.generate(() -> "Olá, seja bem vindo ao programa")
                 .limit(5)
-                .collect(Collectors.toList());
+                .toList();
 
         // Imprimir as saudações geradas...
         listaSaudacoes.forEach(System.out::println);
