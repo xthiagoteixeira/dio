@@ -5,7 +5,7 @@ import java.time.temporal.ChronoUnit;
 
 public class Pessoa {
     private String nome;
-    private LocalDate dataNascimento;
+    private final LocalDate dataNascimento;
 
     public Pessoa(String nome, LocalDate dataNascimento) {
         this.nome = nome;
@@ -23,5 +23,9 @@ public class Pessoa {
     public int getIdade(){
         return (int) (ChronoUnit.YEARS.between(dataNascimento, LocalDate.now()));
 
+    }
+
+    public boolean ehMaiorDeIdade(){
+        return (getIdade() >= 18);
     }
 }
